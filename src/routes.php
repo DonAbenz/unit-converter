@@ -2,11 +2,16 @@
 
 return function () {
    $requestPath = $_SERVER['REQUEST_URI'] ?? '/';
-   $requestMethod = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
    $routeHandler = match ($requestPath) {
       '/' => function () {
-         include BASE_PATH . 'src/Length/LengthController.php';
+         include BASE_PATH . 'src/Controllers/LengthController.php';
+      },
+      '/weight' => function () {
+         include BASE_PATH . 'src/Controllers/WeightController.php';
+      },
+      '/temperature' => function () {
+         include BASE_PATH . 'src/Controllers/TemperatureController.php';
       },
       default => function () {
          http_response_code(404);
