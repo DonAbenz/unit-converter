@@ -7,7 +7,7 @@ $unitFrom = $_POST['unit_from'] ?? $units[0];
 $unitTo = $_POST['unit_to'] ?? $units[0];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   $value = $_POST['value'] ?? 0;
+   $value = isset($_POST['value']) ?? 0;
 
    $conversionRates = [
       'millimeter' => 0.001,

@@ -10,8 +10,7 @@
 </head>
 
 <body class="bg-gray-100">
-   <div class="max-w-4xl mx-auto mt-10 bg-white shadow-md rounded-lg p-8">
-
+   <div class="max-w-2xl mx-auto mt-10 bg-white shadow-md rounded-lg p-8">
       
       <h1 class="text-3xl font-bold text-center mb-6">Unit Converter</h1>
       
@@ -20,16 +19,16 @@
       <?php if (!isset($result)): ?>
          <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="POST" class="space-y-4">
             <div class="flex items-center space-x-4">
-               <input type="text" name="value" value="<?php echo isset($value) ? $value : ''; ?>" placeholder="Enter value" class="border border-gray-300 p-3 rounded w-full" required>
+               <input type="text" name="value" placeholder="Enter value" class="border border-gray-300 p-3 rounded w-full">
                <select name="unit_from" class="border border-gray-300 p-3 rounded w-full">
                   <?php foreach ($units as $unit): ?>
-                     <option value="<?= $unit ?>" <?= ($unitFrom == $unit) ? 'selected' : '' ?>><?= ucfirst($unit) ?></option>
+                     <option value="<?= $unit ?>"><?= ucfirst($unit) ?></option>
                   <?php endforeach; ?>
                </select>
                <span class="text-gray-500">to</span>
                <select name="unit_to" class="border border-gray-300 p-3 rounded w-full">
                   <?php foreach ($units as $unit): ?>
-                     <option value="<?= $unit ?>" <?= ($unitTo == $unit) ? 'selected' : '' ?>><?= ucfirst($unit) ?></option>
+                     <option value="<?= $unit ?>"><?= ucfirst($unit) ?></option>
                   <?php endforeach; ?>
                </select>
             </div>
